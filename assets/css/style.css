@@ -656,12 +656,15 @@ button, a { transition: var(--transition); }
 .property-card {
   border: 1px solid var(--alice-blue);
   box-shadow: var(--shadow-2);
+  width: 350px;
 }
 
 .property-card .card-banner {
   position: relative;
   aspect-ratio: 2 / 1.5;
   overflow: hidden;
+  height: 300px;
+  width: fit-content;
 }
 
 .property-card .card-banner a { height: 100%; }
@@ -672,7 +675,9 @@ button, a { transition: var(--transition); }
   transition: 0.5s ease;
 }
 
-.property-card:hover .card-banner img { transform: scale(1.1); }
+.property-card:hover .card-banner img { 
+  transform: scale(1.1);
+}
 
 .property-card .card-banner::before {
   content: "";
@@ -827,6 +832,9 @@ button, a { transition: var(--transition); }
   color: var(--white);
 }
 
+.property-card .card-content {
+  height: 250px;
+}
 
 
 
@@ -1210,6 +1218,14 @@ button, a { transition: var(--transition); }
     display: flex;
     justify-content: space-between;
     gap: 20px;
+  }
+
+  .property-card {
+    width: 550px;
+  }
+
+  .property-card .card-content {
+    height: 260px;
   }
 
 }
