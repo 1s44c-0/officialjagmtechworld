@@ -448,7 +448,7 @@ button, a { transition: var(--transition); }
 \*-----------------------------------*/
 
 .hero {
-  background: var(--cultured-2);
+  /* background: var(--cultured-2); */
   padding-block: var(--section-padding);
 }
 
@@ -459,13 +459,14 @@ button, a { transition: var(--transition); }
   justify-content: flex-start;
   align-items: center;
   gap: 5px;
+  color: rgb(255, 255, 255);
   margin-bottom: 20px;
 }
 
 .hero-subtitle ion-icon { color: var(--orange-soda); }
 
 .hero-subtitle span {
-  color: var(--dark-jungle-green);
+  color: rgb(255, 255, 255);
   font-size: var(--fs-5);
   font-weight: var(--fw-700);
 }
