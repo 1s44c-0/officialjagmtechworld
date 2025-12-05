@@ -1,0 +1,31 @@
+:root {
+    --primary: #de9b1f;
+    --secondary: #b37d18;
+    --white: #ffffff;
+}
+
+.pry-text {
+    color: var(--primary);
+}
+
+.pry-bc {
+    background-color: var(--primary);
+}
+
+.wh-c {
+    color: var(--white);
+}
+
+.b-product:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.l-img:hover {
+    color: var(--secondary);
+}
+
+.b-t-t:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}
