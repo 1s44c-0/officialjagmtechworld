@@ -29,3 +29,20 @@
     background-color: var(--secondary);
     color: var(--white);
 }
+
+.abt-btn:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.carousel-i {
+    width: 100vw;
+    height: 700px;
+}
+
+.darken {
+    filter: brightness(30%);
+    width: fit-content;
+    height: fit-content;
+}
+  
