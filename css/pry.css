@@ -2,6 +2,13 @@
     --primary: #de9b1f;
     --secondary: #b37d18;
     --white: #ffffff;
+
+    --black-main: #0B0B0B;
+    --black-soft: #121212;
+    --yellow-main: #FFC107;
+    --yellow-soft: #FFD54F;
+    --text-white: #F5F5F5;
+    --text-muted: #BDBDBD;
 }
 
 .pry-text {
@@ -82,6 +89,17 @@
     margin-bottom: 15px;
 }
 
+.team-item .d-flex {
+    background-color: white;
+}
+
+.team-item div h5 {
+    color: var(--text-white);
+}
+.team-item div span {
+    color: var(--text-muted);
+}
+
 .team-item div img {
     height: 500px;
 }
@@ -104,3 +122,18 @@
     object-position: center;
 }
 
+.t-w {
+    color: var(--text-white);
+}
+
+.t-t {
+    color: var(--text-muted);
+}
+
+.testimonial-text p {
+    color: var(--text-muted);
+}
+
+.testimonial-text h5 {
+    color: var(--text-white);
+}

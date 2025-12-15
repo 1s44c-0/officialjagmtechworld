@@ -2,6 +2,13 @@
     --primary: #de9b1f;
     --light: #F6F7F8;
     --dark: #1A2A36;
+
+    --black-main: #0B0B0B;
+    --black-soft: #121212;
+    --yellow-main: #FFC107;
+    --yellow-soft: #FFD54F;
+    --text-white: #F5F5F5;
+    --text-muted: #BDBDBD;
 }
 
 .fw-medium {
@@ -90,7 +97,7 @@
 .navbar .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
-    color: var(--dark);
+    color: var(--text-white);
     font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
@@ -189,7 +196,7 @@
     width: 45px;
     height: 45px;
     margin: 5px 0;
-    background: #FFFFFF;
+    background: #070707;
     box-shadow: 0 0 30px rgba(255, 255, 255, .9);
     border-radius: 45px;
     transition: .5s;
@@ -414,7 +421,7 @@
     left: 0;
     height: 100%;
     width: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
 }
 
@@ -425,7 +432,7 @@
     right: 0;
     height: 100%;
     width: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to left, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
 }
 
