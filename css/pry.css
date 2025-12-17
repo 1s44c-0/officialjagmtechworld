@@ -15,6 +15,10 @@
     color: var(--primary);
 }
 
+.pry-texts {
+    color: #1d1d1d;
+}
+
 .pry-bc {
     background-color: var(--primary);
 }
@@ -97,7 +101,7 @@
     color: var(--text-white);
 }
 .team-item div span {
-    color: var(--text-muted);
+    color: #1d1d1d;
 }
 
 .team-item div img {
@@ -117,7 +121,7 @@
 
 .footer-a-img div img {
     width: 100%;
-    height: 150px;
+    height: 150px;`
     object-fit: cover;
     object-position: center;
 }
