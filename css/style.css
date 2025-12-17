@@ -196,7 +196,7 @@
     width: 45px;
     height: 45px;
     margin: 5px 0;
-    background: #930f0f;
+    background: #0f0f0f;
     box-shadow: 0 0 30px rgba(255, 255, 255, .9);
     border-radius: 45px;
     transition: .5s;
@@ -421,7 +421,7 @@
     left: 0;
     height: 100%;
     width: 0;
-    background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
 }
 
@@ -432,7 +432,7 @@
     right: 0;
     height: 100%;
     width: 0;
-    background: linear-gradient(to left, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
 }
 

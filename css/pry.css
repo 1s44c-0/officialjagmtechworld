@@ -7,8 +7,8 @@
     --black-soft: #f53737;
     --yellow-main: #FFC107;
     --yellow-soft: #FFD54F;
-    --text-white: #F5F5F5;
-    --text-muted: #BDBDBD;
+    --text-white: #0f0f0f;
+    --text-muted: #9e9e9e;
 }
 
 .pry-text {
@@ -121,7 +121,7 @@
 
 .footer-a-img div img {
     width: 100%;
-    height: 150px;`
+    height: 150px;
     object-fit: cover;
     object-position: center;
 }
