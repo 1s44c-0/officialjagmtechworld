@@ -3,8 +3,8 @@
     --light: #F6F7F8;
     --dark: #1A2A36;
 
-    --black-main: #0B0B0B;
-    --black-soft: #121212;
+    --black-main: #e51616;
+    --black-soft: #f53737;
     --yellow-main: #FFC107;
     --yellow-soft: #FFD54F;
     --text-white: #F5F5F5;
@@ -196,7 +196,7 @@
     width: 45px;
     height: 45px;
     margin: 5px 0;
-    background: #070707;
+    background: #930f0f;
     box-shadow: 0 0 30px rgba(255, 255, 255, .9);
     border-radius: 45px;
     transition: .5s;
