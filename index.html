@@ -34,14 +34,12 @@
 
     <style>
         
-        body {
-            background-image: url(../officialjagmtechworld/img/backgound.jpg);
+        /* body {
+            background-image: url(../officialjagmtechworld/img/backgounds.jpg);
             background-repeat: no-repeat;
-            background-position: center center;
             background-attachment: fixed;
             background-size: cover;
-            transform: 1s;
-        }
+        } */
 
         .header {
             background: #0f0f0f;
@@ -84,13 +82,20 @@
         .ivb {
             color: #a0721d;
         }
+        .preloader {
+            background-image: url(../officialjagmtechworld/img/preloader.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
     </style>
 </head>
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" style="background-color: #a0721d;" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border" style="width: 3rem; height: 3rem; color: #ffffff;" role="status">
+    <div id="spinner" class="show preloader position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border" style="width: 3rem; height: 3rem; color: #a0721d;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
