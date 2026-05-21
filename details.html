@@ -442,6 +442,7 @@
 
         const productId = params.get("id")
 
+        const BASE_URL = "https://officialjagmtechworld.onrender.com";
         const API_URL = `https://officialjagmtechworld.onrender.com/api/products/${productId}/`;
         async function getProductDetails() {
             const response = await fetch(API_URL);
@@ -456,7 +457,7 @@
             let imageHTML = "";
             product.images.forEach(image => {
                 imageHTML += `
-                    <img src="${image.image}" alt="${product.title}">
+                    <img src="${BASE_URL}/media/products/${image.image}" alt="${product.title}">
                 `;
             });
 

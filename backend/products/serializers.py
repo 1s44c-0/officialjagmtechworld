@@ -15,7 +15,6 @@ class CategorySerializers(serializers.ModelSerializer):
         ]
 
 class ProductImageSerializer(serializers.ModelSerializer):
-    image = serializers.SerializerMethodField()
     class Meta:
         model = productImage
 
@@ -23,13 +22,7 @@ class ProductImageSerializer(serializers.ModelSerializer):
             "id",
             "image"
         ]
-
-        def get_image(self, obj):
-            request = self.context.get('request')
-            if obj.image and hasattr(obj.image, 'url'):
-                return request.build_absolute_uri(obj.image.url)
-            return None
-
+        
 class ProductSerializer(serializers.ModelSerializer):
     category = CategorySerializers(
         read_only=True
