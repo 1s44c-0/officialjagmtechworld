@@ -442,7 +442,7 @@
 
         const productId = params.get("id")
 
-        const API_URL = `http://127.0.0.1:8000/api/products/${productId}/`;
+        const API_URL = `https://officialjagmtechworld.onrender.com/api/products/${productId}/`;
         async function getProductDetails() {
             const response = await fetch(API_URL);
             const product = await response.json();
