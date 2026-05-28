@@ -15,7 +15,6 @@ class CategorySerializers(serializers.ModelSerializer):
         ]
 
 class ProductImageSerializer(serializers.ModelSerializer):
-    image = serializers.SerializerMethodField()
 
     class Meta:
         model = productImage
@@ -24,6 +23,15 @@ class ProductImageSerializer(serializers.ModelSerializer):
             "id",
             "image"
         ]
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        if instance.image:
+            try:
+                data['image'] = instance.image.url
+            except Exception:
+                data['image'] = str(instance.image)
+        return data
 
     def get_image(self, obj):
         if obj.image:
