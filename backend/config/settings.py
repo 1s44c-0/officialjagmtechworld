@@ -134,11 +134,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:5501",
-    "http://localhost:5501"
-]
-
 CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
