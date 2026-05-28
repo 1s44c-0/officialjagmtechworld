@@ -510,7 +510,7 @@
         function handleBuyNow(productTitle) {
             const phoneNumber = "2347050838536";
             const productUrl = window.location.href;
-            const baseMessage = `Hello JAGMTECH WORLD Team,%0A%0AI'm interested in purchasing the product: ${productTitle}.%0A%0APlease provide me with more information on how to proceed with the purchase.\n\nProduct Link: ${productUrl}`;
+            const baseMessage = `Hello JAGMTECH WORLD Team, I'm interested in purchasing the product: ${productTitle}. Please provide me with more information on how to proceed with the purchase.\n\nProduct Link: ${productUrl}`;
             const encodedMessage = encodeURIComponent(baseMessage);
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
