@@ -509,11 +509,13 @@
 
         function handleBuyNow(productTitle) {
             const phoneNumber = "2347050838536";
-            const baseMessage = `Hello JAGMTECH WORLD Team,%0A%0AI'm interested in purchasing the product: ${productTitle}.%0A%0APlease provide me with more information on how to proceed with the purchase.`;
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${baseMessage}`;
+            const productUrl = window.location.href;
+            const baseMessage = `Hello JAGMTECH WORLD Team,%0A%0AI'm interested in purchasing the product: ${productTitle}.%0A%0APlease provide me with more information on how to proceed with the purchase.\n\nProduct Link: ${productUrl}`;
+            const encodedMessage = encodeURIComponent(baseMessage);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
         }
-        
+
         function initializeCarousel() {
             if (!track || !container || images.length === 0) return;
             container.addEventListener('touchstart', dragStart);
