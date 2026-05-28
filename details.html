@@ -455,11 +455,25 @@
         function displayProduct(product) {
             const detailsContainer = document.getElementById("detailsContainer");
             let imageHTML = "";
-            product.images.forEach(image => {
-                imageHTML += `
-                    <img src="${BASE_URL}/media/products/${image.image}" alt="${product.title}">
-                `;
-            });
+
+            // Check if images exist and have items, just like your working product page
+            if (product.images && product.images.length > 0) {
+                product.images.forEach(image => {
+                    // Use the exact same structural logic that worked: image.image
+                    let imageUrl = "https://via.placeholder.com/150"; // Fallback
+                    
+                    if (image.image) {
+                        imageUrl = image.image;
+                    }
+
+                    imageHTML += `
+                        <img src="${imageUrl}" alt="${product.title}">
+                    `;
+                });
+            } else {
+                // Fallback if the product has no images array at all
+                imageHTML = `<img src="https://via.placeholder.com/150" alt="${product.title}">`;
+            }
 
             detailsContainer.innerHTML = `
                 <div class="product-image">
@@ -469,28 +483,26 @@
                 </div>
                 <div class="product-info">
                     <h4>${product.title}</h4>
-                    <h2>N${Number(product.price).toLocaleString(
-                                undefined,
-                                {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2,
-                                }
+                    <h2>₦${Number(product.price).toLocaleString(
+                        undefined,
+                        {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                        }
                     )}</h2>
-                    <p>
-                        ${product.description}
-                    </p>
-
-                    <button>
-                        Add To Cart
-                    </button>
+                    <p>${product.description}</p>
+                    <button>Add To Cart</button>
                 </div>
             `;
 
+            // Re-initialize your carousel after elements are added to the DOM
             track = document.querySelector('.carousel-track');
             images = document.querySelectorAll('.carousel-track img');
             container = document.querySelector('.product-image');
-
-            initializeCarousel()
+            
+            if (typeof initializeCarousel === "function") {
+                initializeCarousel();
+            }
         }
 
         function initializeCarousel() {
