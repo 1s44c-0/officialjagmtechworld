@@ -442,7 +442,6 @@
             });
         });
 
-        const BASE_URL = "https://officialjagmtechworld.onrender.com";
         const API_URL = "https://officialjagmtechworld.onrender.com/api/products/";
 
         async function getProducts(page = 1, search = "") {
@@ -456,14 +455,49 @@
             setupPagination(data);
         }
 
+        // function displayProducts(products) {
+        //     const container = document.getElementById("productContainer");
+        //     container.innerHTML = "";
+        //     products.forEach(product => {
+        //         let images = product.images && product.images.length > 0 ? product.images[0]?.image : "https://via.placeholder.com/350x200?text=No+Image";
+        //         container.innerHTML += `
+        //             <div class="card">
+        //                 <img src="${images}" alt="Image">
+        //                 <div class="card-content">
+        //                     <p>${product.title}</p>
+        //                     <h4>N${Number(product.price).toLocaleString(
+        //                         undefined,
+        //                         {
+        //                             minimumFractionDigits: 2,
+        //                             maximumFractionDigits: 2,
+        //                         }
+        //                     )}</h4>
+        //                     <a href="details.html?id=${product.id}" class="card-btn">Read More</a>
+        //                 </div>
+        //             </div>
+        //         `;
+        //     });
+        // }
+
         function displayProducts(products) {
             const container = document.getElementById("productContainer");
             container.innerHTML = "";
+            
             products.forEach(product => {
-                let images = `${BASE_URL}/media/products/${product.images[0]?.image}`;
+                let imageUrl = "https://via.placeholder.com/150"; // Fallback
+
+                if (product.images && product.images.length > 0) {
+                    let rawPath = product.images[0].image;
+
+                    // IF the path is relative (doesn't start with http), attach Cloudinary's domain
+                    if (rawPath) {
+                        imageUrl = rawPath;
+                    }
+                }
+
                 container.innerHTML += `
                     <div class="card">
-                        <img src="${images}" alt="Image">
+                        <img src="${imageUrl}" alt="Product Image">
                         <div class="card-content">
                             <p>${product.title}</p>
                             <h4>N${Number(product.price).toLocaleString(
@@ -479,6 +513,8 @@
                 `;
             });
         }
+
+
 
         function setupPagination(data) {
             const pagination = document.getElementById("pagination");
