@@ -25,8 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# SECURITY WA RNING: don't run with debug turned on in production!
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
     'cloudinary',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
 
     'rest_framework',
     'corsheaders',
@@ -133,6 +134,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5501",
+    "http://localhost:5501"
+]
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
@@ -150,5 +156,17 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': config('API_SECRET'),
 }
 
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    }
+}
 
+cloudinary.config(
+    cloud_name= CLOUDINARY_STORAGE['CLOUD_NAME'],
+    api_key= CLOUDINARY_STORAGE['API_KEY'],
+    api_secret= CLOUDINARY_STORAGE['API_SECRET']
+)
