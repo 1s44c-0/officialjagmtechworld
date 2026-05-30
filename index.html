@@ -780,14 +780,14 @@
     <script>
         (function() {
             emailjs.init({
-                publicKey: "TRFTPAVpQR2c4QNRw",
+                publicKey: "hQfv2YvQ2OqHc_sJr",
             });
         })();
 
         document.getElementById("newsletter-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            emailjs.sendForm("service_qiw6x1n", "template_5d49bx8", this)
+            emailjs.sendForm("service_m8pnolf", "template_plzmkcp", this)
                 .then(function() {
                     alert("Thank you for subscribing! We'll keep you updated.");
                 }, function(error) {
